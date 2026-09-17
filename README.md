@@ -1,32 +1,29 @@
-# React + TypeScript + Vite
+# Impulse Physics
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A from-scratch 2D rigid-body physics engine with SAT collision, sequential-impulse solving, and joints — wrapped in an interactive playground.
 
-Currently, two official plugins are available:
+## What’s in it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Rigid bodies with position / velocity / angular velocity
+- Separating Axis Theorem (SAT) collision detection
+- Sequential impulse solver for contacts and joints
+- Interactive canvas so you can drop, drag, and watch the simulation
 
-## React Compiler
+No third-party physics library. The interesting parts are the collision and constraint solver, not the UI shell.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Status
 
-## Expanding the Oxlint configuration
+Core engine is the focus. The default Vite scaffold is gone from the README; the project itself is still being tightened.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Run
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
+npm test
+npm run build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## License
+
+MIT
